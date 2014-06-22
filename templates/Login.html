@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Apartamentos </title>
+
+	<style type="text/css">
+	{% include "style.css" %}
+	{% include "style2.css" %}
+	{% include "jquery.mmenu.all.css" %}
+	{% include "vallenato.css" %}
+	{% include "magnific-popup.css" %}
+
+	</style>
+
+
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		</script>
+		<!----webfonts---->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<!----//webfonts---->
+		<!---script---->
+		<script src="js/jquery.min.js"></script>
+		<!---//script---->
+
+		 <!---strat-slider---->
+	    <link rel="stylesheet" type="text/css" href="css/style2.css" />
+		<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
+		<!---//strat-slider---->
+	</head>
+	<body>
+		<!----start-Login---->
+			<div class="blog">
+				<div class="wrap">
+					<div class="blog-left">
+						<div class="blog-left-head">
+							<span> </span>
+							<h1>REGISTRO CON FACEBOOK</h1>
+						</div>
+						<div class="blog-artical-grids">
+							<div class="blog-artical-grid">
+								<div class="blog-artical-grid-pic-info">
+									<div class="blog-artical-grid-pic">
+
+										<form name="input" action="{{url_for('Prueba')}}" method="post">
+											<h1>E-mail o Telefono </h1><input type="text" name="Usuario" required><br>
+											<h1>Contraseña</h1> <input type="password" name="Password" required><br>
+											<h2><input type="submit" value="Aceptar" onclick='urspas()'></h2>
+										</form>
+									</div>
+								</div>
+					<div class="clear"> </div>
+				</div>
+			</div>
+			<!----//End-Login---->
+	</body>
+</html>
+
