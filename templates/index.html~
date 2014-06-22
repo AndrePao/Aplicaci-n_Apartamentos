@@ -12,7 +12,7 @@
 	{% include "vallenato.css" %}
 	{% include "magnific-popup.css" %}
 	
-{% include "check.css" %}
+
 
 
 

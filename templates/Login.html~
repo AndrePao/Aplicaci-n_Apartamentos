@@ -31,7 +31,7 @@
 	</head>
 	<body>
 		
-		
+		alert("Error en Usuario o Contraseña. Intenta de nuevo.")
 		
 		<!----start-Login---->
 			<div class="blog">

@@ -19,9 +19,13 @@
 	<option value="Habitacion">Habitacion</option>
 	</select>
 	<h3> ...<h3>
-	<center>Nombre <input type="text" name="Nombre" required><br>
-	Ubicacion   <input type="text" name="Ubicacion" required><br>
-	Precio de <input type="text" name="Ubicacion" required>hasta <input type="text" name="Ubicacion" required><br> </center>
+	<center>Nombre <input type="text" name="nombre" required><br>
+	Ubicacion   <input type="text" name="ubicacion" required><br>
+	Precio de <input type="number" name="precio1" required>hasta <input type="number" name="precio2" required><br> 
+	E-mail  <input type="email" name="email">
+	Numero de cuartos  <input type="number" name="cuartos">
+	Numero de baños  <input type="number" name="baños">
+	</center>
 
       <input type="checkbox" value="amueblado"  name="amueblado"  />Amueblado<br>
       <input type="checkbox" value="agua"  name="agua"  />Agua<br>

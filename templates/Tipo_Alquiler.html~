@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+{% block content %}
+
+ <style type="text/css">
+  body {
+    color: black;
+    background-color: white}
+  </style>
+
+<div class="ondisplay">
+    <div class="short-codepara-grid">
+		<div class="short-codepara-grid-head5">
+		<span> </span>
+		 <center><h5>TIPO DE ALQUILER</h5> </center>
+		</div>
+		<center><p>Seleccione el tipo de alquiler que desea registrar</p> </center>
+		</div>
+    <h3><h3>
+
+<div class="header" id="move-top">
+				<div class="wrap">
+				<div class="header-left">
+				
+				</div>
+				<div class="header-center">
+					<!----start-top-nav---->
+					<div class="top-nav">
+						<ul>
+							<li class="active"><a href="{{url_for('Habitacion')}}">Habitacion</a></li>
+							<li><a href="{{url_for('Apartamento')}}">Apartamento</a></li>
+														
+						</ul>
+					</div>
+					<!----//End-top-nav---->
+					
+					<div class="clear"> </div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+
+
+
+    </div>
+    <!-- end .roundedTwo -->
+  </section>
+ 
+  
+</div>
+
+{% endblock %}

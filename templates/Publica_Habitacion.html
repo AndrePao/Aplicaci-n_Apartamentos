@@ -1,0 +1,79 @@
+{% extends "index.html" %}
+{% block content %}
+
+ <style type="text/css">
+  body {
+    color: black;
+    background-color: white}
+  </style>
+
+   <div class="short-codepara-grid">
+	<div class="short-codepara-grid-head5">
+		 <center><span> </span></center>
+		 <center><h5>Datos de la habitacion</h5> </center>
+	</div>
+		<center><p>Indique los datos correspondientes</p> </center>
+
+
+
+<form name="input" action="{{url_for('Agrega_Habitacion')}}" method="post">
+	<font color="blue"><p> Datos Generales </font>
+        
+	<p>
+
+	</p>
+	&nbsp;&nbsp;Nombre del apartamento <input type="text" name="nombre" size="20" required><br>
+	<p>
+	</p>
+	&nbsp;&nbsp;Ubicación  &nbsp;&nbsp;&nbsp; <input type="text" name="ubicacion" size="20" required><br>
+<p>
+	</p>
+	&nbsp;&nbsp;Descripción <input type="text" name="descripcion" size="20" required><br>
+<p>
+	</p>
+	&nbsp;&nbsp;E-mail  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="email" name="email" size="20" required> <br> 
+<p>
+	</p>
+	&nbsp;&nbsp;Precio  &nbsp;&nbsp;&nbsp;&nbsp; <input type="number" name="precio1" pattern="[0-1-2-3-4-5-6-7-8-9]{1,9}" required><br>
+<p>
+	</p>
+	&nbsp;&nbsp;Número de cuartos  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" name="cuartos"  size="1" pattern="[0-1-2-3-4-5-6-7-8-9]{1,9}"  required> <br> 
+<p>
+	</p>
+	&nbsp;&nbsp;Número de baños  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="integer" name="banos" size="1" pattern="[0-1-2-3-4-5-6-7-8-9]{1,9}"  required> <br> 
+<p>
+	</p>
+	&nbsp;&nbsp;Teléfono&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" name="telefono" size="1" pattern="[0-1-2-3-4-5-6-7-8-9]{1,9}"  required><br>
+<p>
+	</p>
+	&nbsp;&nbsp;Número de personas &nbsp;&nbsp;&nbsp; <input type="number" name="personas" size="1" pattern="[0-1-2-3-4-5-6-7-8-9]{1,9}"><br>
+	<p>
+	</p>
+	<font color="blue"><p> Servicios brindados</font>
+	</p>
+	<p>
+	</p>
+<!-- Servicios  -->
+      <input type="checkbox" value="amueblado"  name="amueblado"  />Amueblado<br>
+      <input type="checkbox" value="agua"  name="agua"  />Agua<br>
+      <input type="checkbox" value="luz"  name="luz"  />Luz<br>
+      <input type="checkbox" value="cable"  name="cable"  />Cable<br>
+      <input type="checkbox" value="internet"  name="internet"  />Internet<br>
+      <input type="checkbox" value="cochera"  name="cochera"  />Cochera<br>
+<!-- Servicios de habitacion -->
+      <input type="checkbox" value="limpieza"  name="limpieza"  />Limpieza<br>
+      <input type="checkbox" value="lavanderia"  name="lavanderia"  />Lavandería<br>
+      <input type="checkbox" value="comida"  name="comida"  />Comida<br>
+      <input type="checkbox" value="bano"  name="bano"  />Baño<br>
+
+ 	<p>
+	</p>
+      <input type="submit" value="Aceptar">
+
+</form>
+   </div>
+    
+
+
+
+{% endblock %}
