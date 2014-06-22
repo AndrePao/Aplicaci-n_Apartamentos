@@ -1,0 +1,136 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Apartamentos CR| Home :: w3layouts</title>
+
+	<style type="text/css">
+	body {background-color:black;}
+	{% include "style.css" %}
+	{% include "style2.css" %}
+	{% include "jquery.mmenu.all.css" %}
+	{% include "vallenato.css" %}
+	{% include "magnific-popup.css" %}
+	
+{% include "check.css" %}
+
+
+
+	
+	</style>
+
+
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		</script>
+		<!----webfonts---->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<!----//webfonts---->
+		<!---script---->
+		<script src="js/jquery.min.js"></script>
+		<!---//script---->
+		
+		 <!---strat-slider---->
+	    <link rel="stylesheet" type="text/css" href="css/style2.css" />
+		<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
+		<!---//strat-slider---->
+	</head>
+	<body>
+		<!----start-wrap---->
+
+		<!------start-768px-menu---->
+				<div id="page">
+						<div id="header">
+						<a class="navicon" href="#menu"> </a>
+						</div>
+						<nav id="menu-left">
+							<ul>
+								<li class="active"><a href="{{url_for('Publicar')}}">Publicar Apartamento</a></li>
+								<li><a href="#about">Buscar Apartamento</a></li>
+								<li><a href="#services">Favoritos</a></li>
+							</ul>
+						</nav>
+				</div>
+		<!------start-768px-menu---->
+
+
+			<!----start-header---->
+			<div class="header" id="move-top">
+				<div class="wrap">
+				<div class="header-left">
+				
+				</div>
+				<div class="header-center">
+					<!----start-top-nav---->
+					<div class="top-nav">
+						<ul>
+							<li class="active"><a href="{{url_for('Publicar')}}">Publicar Apartamento</a></li>
+							<li><a href="#about">Buscar Apartamento</a></li>
+							<li><a href="#services">Favoritos</a></li>
+							
+						</ul>
+					</div>
+					<!----//End-top-nav---->
+					
+					<div class="clear"> </div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+			<!----//End-header---->
+			
+			<div class="works" id="work">
+				<div class="wrap">
+					<div class="head">
+						<span> </span>
+						<font color="white"><h3>LAS MEJORES BUSQUEDAS</h3></font>
+						<font color="white"><h3>EL MEJOR LUGAR</h3></font>
+					</div>
+					
+				
+				</div><!-- container -->
+				<div class="clear"> </div>
+				
+				<div class="clear"> </div>
+				</div>
+			</div>
+			<div class="works-bg">
+				
+			</div>
+			</div>
+			</div>
+				</div>
+			</div>
+			<!---- //End-slider---->
+			<!---start-works---->
+			
+			<div class="works" id="work">
+				<div class="wrap">
+					<div class="head">
+						<span> </span>
+						<h3>Encuentra tu apartamento perfecto</h3>
+					</div>
+					
+				
+				</div><!-- container -->
+				<div class="clear"> </div>
+				
+				<div class="clear"> </div>
+				</div>
+			</div>
+			<div class="works-bg">
+				
+			</div>
+			</div>
+			</div>
+				</div>
+			</div>
+			<!---//End-works---->
+		
+			{% block content %}{% endblock %}
+	
+			
+		<!----//End-wrap---->
+	</body>
+</html>
+
