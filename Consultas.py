@@ -25,7 +25,7 @@ class consultas_general:
         self.lista=[]
         self.precio1=self.validar.convertir_entero(precio1)
         self.precio2=self.validar.convertir_entero(precio2)
-        for e in self.cursor.execute('''SELECT a.nombre, a.tipo_alquiler,a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono,
+        for e in self.cursor.execute('''SELECT a.id_apartamento, a.nombre, a.tipo_alquiler,a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono,
         f.n_dormitorio, f.n_bano, f.amueblado, f.cochera, f.agua, f.luz, f.cable, f.internet,f.limpieza, f.lavanderia, f.comida
         from alquiler a inner join facilidades f on a.id_apartamento=f.id_apartamento where a.precio>=? and a.precio<=? order by precio asc''', (self.precio1,self.precio2,)):
             self.lista.append(e)
@@ -35,7 +35,7 @@ class consultas_general:
     def consultar_nombre(self, nombre):
         self.lista=[]
         self.nombre=self.validar.convertir_minuscula(nombre)
-        for e in self.cursor.execute('''SELECT a.tipo_alquiler,a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono,
+        for e in self.cursor.execute('''SELECT a.id_apartamento,a.tipo_alquiler,a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono,
         f.n_dormitorio, f.n_bano, f.amueblado, f.cochera, f.agua, f.luz, f.cable, f.internet,f.limpieza, f.lavanderia, f.comida
         from alquiler a inner join facilidades f on a.id_apartamento=f.id_apartamento where a.nombre=? order by precio asc''',(self.nombre,)):
             self.lista.append(e)
@@ -52,7 +52,7 @@ class consultas_apartamento(consultas_general):
         self.lista=[]
         self.precio1=self.validar.convertir_entero(precio1)
         self.precio2=self.validar.convertir_entero(precio2)
-        for e in self.cursor.execute('''SELECT a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas,
+        for e in self.cursor.execute('''SELECT a.id_apartamento, a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas,
             f.n_dormitorio, f.n_bano, f.amueblado, f.cochera, f.agua, f.luz, f.cable, f.internet 
             from alquiler a inner join facilidades f on a.tipo_alquiler='apartamento' where a.id_apartamento=f.id_apartamento and a.precio>=? and a.precio<=?
             order by precio asc''', (self.precio1,self.precio2,)):
@@ -70,7 +70,7 @@ class consultas_apartamento(consultas_general):
         self.precio1=self.validar.convertir_entero(precio1)
         self.precio2=self.validar.convertir_entero(precio2)
         self.dormitorios=self.validar.convertir_entero(n_dormitorios)
-        for e in self.cursor.execute('''SELECT a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas,
+        for e in self.cursor.execute('''SELECT a.id_apartamento, a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas,
             f.n_dormitorio, f.n_bano, f.amueblado  
             from alquiler a inner join facilidades f on a.tipo_alquiler='apartamento' where a.id_apartamento=f.id_apartamento and  a.precio>=? and a.precio<=? and f.luz='si' and f.agua='si'
             and f.cable='si' and f.internet='si' and f.cochera='si' and f.n_dormitorio>=? order by a.precio asc''', (self.precio1,self.precio2,self.dormitorios,)):
@@ -84,26 +84,26 @@ class consultas_apartamento(consultas_general):
         self.fac2=self.validar.convertir_minuscula(facilidad2)
         self.dormitorios=self.validar.convertir_entero(dormitorio)
         if ( self.fac1=='agua' and  self.fac2=='luz'):
-            for e in self.cursor.execute('''SELECT a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas,
+            for e in self.cursor.execute('''SELECT a.id_apartamento, a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas,
                 f.n_dormitorio, f.n_bano, f.amueblado, f.cochera, f.cable, f.internet
                 from alquiler a inner join facilidades f on a.tipo_alquiler='apartamento' where a.id_apartamento=f.id_apartamento and luz='si' and agua='si' and
                 n_dormitorio>=? order by a.precio asc''', (self.dormitorios,)):
                 self.lista.append(e)
         elif ( self.fac1=='agua' and  self.fac2=='cable'):
-            for e in self.cursor.execute('''SELECT a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas,
+            for e in self.cursor.execute('''SELECT a.id_apartamento, a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas,
                 f.n_dormitorio, f.n_bano, f.amueblado, f.cochera, f.cable, f.internet
                 from alquiler a inner join facilidades f on a.tipo_alquiler='apartamento' where a.id_apartamento=f.id_apartamento and agua='si' and cable='si' and
                 f.n_dormitorio>=? order by precio asc''', (self.dormitorios,)):
                 self.lista.append(e)
         
         elif ( self.fac1=='agua' and  self.fac2=='internet'):
-            for e in self.cursor.execute('''SELECT a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas,
+            for e in self.cursor.execute('''SELECT a.id_apartamento, a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas,
                 f.n_dormitorio, f.n_bano, f.amueblado, f.cochera, f.cable, f.internet
                 from alquiler a inner join facilidades f on a.tipo_alquiler='apartamento' where a.id_apartamento=f.id_apartamento and agua='si' and internet='si' and
                 n_dormitorio>=? order by precio asc''', (self.dormitorios,)):
                 self.lista.append(e)
         elif ( self.fac1=='cable' and  self.fac2=='internet'):
-            for e in self.cursor.execute('''SELECT a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas,
+            for e in self.cursor.execute('''SELECT a.id_apartamento, a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas,
                 f.n_dormitorio, f.n_bano, f.amueblado, f.cochera, f.cable, f.internet
                 from alquiler a inner join facilidades f on a.tipo_alquiler='apartamento' where a.id_apartamento=f.id_apartamento and cable='si' and internet='si' and
                 n_dormitorio>=? order by precio asc''', (self.dormitorios,)):
@@ -118,8 +118,8 @@ class consultas_habitacion(consultas_general):
         self.lista=[]
         self.precio1=self.validar.convertir_entero(precio1)
         self.precio2=self.validar.convertir_entero(precio2)
-        for e in self.cursor.execute('''SELECT a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, 
-            f.n_bano,f.bano_compartido, f.limpieza,f.amueblado, f.comida, f.lavanderia, f.agua, f.luz, f.cable, f.internet 
+        for e in self.cursor.execute('''SELECT a.id_apartamento, a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, 
+            f.n_bano,f.bano_compartido, f.limpieza,f.amueblado, f.comida, f.cochera, f.lavanderia, f.agua, f.luz, f.cable, f.internet 
             from alquiler a inner join facilidades f on a.tipo_alquiler='habitacion' where a.id_apartamento=f.id_apartamento and a.precio>=? and a.precio<=?
             order by precio asc''', (self.precio1,self.precio2,)):
             self.lista.append(e)
@@ -136,8 +136,8 @@ class consultas_habitacion(consultas_general):
         self.lista=[]
         self.precio1=self.validar.convertir_entero(precio1)
         self.precio2=self.validar.convertir_entero(precio2)
-        for e in self.cursor.execute('''SELECT a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono,
-            f.n_bano, f.amueblado, f.bano_compartido, f.limpieza, f.comida, f.lavanderia  
+        for e in self.cursor.execute('''SELECT a.id_apartamento, a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono,
+            f.n_bano, f.amueblado, f.bano_compartido, f.limpieza, f.comida, f.cochera,f.lavanderia  
             from alquiler a inner join facilidades f on a.tipo_alquiler='habitacion' where a.id_apartamento=f.id_apartamento and  a.precio>=? and a.precio<=? and f.luz='si' and f.agua='si'
             and f.cable='si' and f.internet='si' order by a.precio asc''', (self.precio1,self.precio2,)):
             self.lista.append(e)
@@ -146,8 +146,8 @@ class consultas_habitacion(consultas_general):
     #consultas por facilidades: limpieza, comida y lavanderia
     def consultar_3_facilidades(self):
         self.lista=[]
-        for e in self.cursor.execute('''SELECT a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono,
-            f.n_bano, f.amueblado, f.bano_compartido, f.agua, f.luz, f.cable, f.internet  
+        for e in self.cursor.execute('''SELECT a.id_apartamento, a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono,
+            f.n_bano, f.amueblado, f.bano_compartido,f.cochera, f.agua, f.luz, f.cable, f.internet  
             from alquiler a inner join facilidades f on a.tipo_alquiler='habitacion' where a.id_apartamento=f.id_apartamento and f.lavanderia='si' 
             and f.limpieza='si' and f.comida='si' order by a.precio asc'''):
             self.lista.append(e)
