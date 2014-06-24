@@ -24,13 +24,13 @@ class Favorito(Usuario):
         Usuario.__init__(self,correo)
 
     #guarda los apartamentos y habitaciones favoritos de un usuario
-    def agregar_favorito(self,correo, id_alquiler):
+    def agregar_favorito(self,id_alquiler):
         self.alquiler=id_alquiler
         self.cursor.execute('''INSERT INTO favoritos VALUES (?,?)''', (self.alquiler,self.correo,))
         self.c.commit_conexion()
 
     #consulta los apartamentos y habitaciones de un usuario
-    def consultar_favorito(self,correo):
+    def consultar_favorito(self):
         self.listaF=[]
         
         for e in self.cursor.execute('''SELECT a.nombre, a.tipo_alquiler,a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono,
