@@ -24,7 +24,7 @@ class Favorito(Usuario):
         Usuario.__init__(self,correo)
 
     #guarda los apartamentos y habitaciones favoritos de un usuario
-    def agregar_favorito(self,id_alquiler):
+    def agregar_favorito(self,correo, id_alquiler):
         self.alquiler=id_alquiler
         self.cursor.execute('''INSERT INTO favoritos VALUES (?,?)''', (self.alquiler,self.correo,))
         self.c.commit_conexion()
