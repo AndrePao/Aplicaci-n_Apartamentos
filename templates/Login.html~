@@ -31,7 +31,7 @@
 	</head>
 	<body>
 		
-		alert("Error en Usuario o Contraseña. Intenta de nuevo.")
+		
 		
 		<!----start-Login---->
 			<div class="blog">
@@ -51,8 +51,11 @@
 										<h3>Contraseña</h3> <input type="password" name="Password" required><br>
 <p>
 </p>
-
+&nbsp;&nbsp; 
+&nbsp;&nbsp; 
 										<h2><input type="submit" value="Aceptar"></h2>
+<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+
 									</form>
 									</div>
 								</div>

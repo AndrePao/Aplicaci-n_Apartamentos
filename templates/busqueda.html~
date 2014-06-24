@@ -1,0 +1,88 @@
+{% extends "consultas.html" %}
+{% block content %}
+
+ <style type="text/css">
+  body {
+    color: black;
+    background-color: white}
+  </style>
+		
+
+		<div class="works" id="work">
+				<div class="wrap">
+					<div class="head">
+						<span> </span>
+						<h3>Consultas Alquiler</h3>
+					</div>
+					
+				
+				</div><!-- container -->
+				<div class="clear"> </div>
+				
+				<div class="clear"> </div>
+				</div>
+			</div>
+
+
+	<div class="short-codepara-grid-head5">
+		 <span> </span>
+		 <h5>Consultas Generales</h5> 
+	</div>
+	<h5>Indique el dato de búsqueda</h5>
+<!----/otro---->
+    <div class="header" id="move-top">
+				<div class="wrap">
+				<div class="header-left">
+				
+				</div>
+				<div class="header-center">
+					<!----start-top-nav---->
+					<div class="top-nav">
+						<ul>
+							<li class="active"><a href="{{url_for('Nombre')}}">Nombre</a></li>
+							<li><a href="{{url_for('Precio')}}">Precio</a></li>
+							<li><a href="{{url_for('Ubicacion')}}">Ubicación</a></li>
+																				
+						</ul>
+					</div>
+					<!----//End-top-nav---->
+					
+					<div class="clear"> </div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+
+    </div>
+
+<div class="short-codepara-grid-head5">
+		 <span> </span>
+		 <h5>Consultas Específicas</h5> 
+	</div>
+	<h5>Indique el tipo de Alquiler</h5>
+<!----/otro---->
+    <div class="header" id="move-top">
+				<div class="wrap">
+				<div class="header-left">
+				
+				</div>
+				<div class="header-center">
+					<!----start-top-nav---->
+					<div class="top-nav">
+						<ul>
+							<li class="active"><a href="{{url_for('Consulta_Habitacion')}}">Habitación</a></li>
+							<li><a href="{{url_for('Consulta_Apartamento')}}">Apartamento</a></li>
+										
+						</ul>
+					</div>
+					<!----//End-top-nav---->
+					
+					<div class="clear"> </div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+
+
+
+    </div>
+
+{% endblock %}

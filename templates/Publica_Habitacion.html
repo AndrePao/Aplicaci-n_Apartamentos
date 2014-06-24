@@ -1,11 +1,7 @@
 {% extends "index.html" %}
 {% block content %}
 
- <style type="text/css">
-  body {
-    color: black;
-    background-color: white}
-  </style>
+
 
    <div class="short-codepara-grid">
 	<div class="short-codepara-grid-head5">
@@ -13,10 +9,52 @@
 		 <center><h5>Datos de la habitacion</h5> </center>
 	</div>
 		<center><p>Indique los datos correspondientes</p> </center>
+</div>
+<head>  
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+<style type="text/css">  
+  html { height: 100% }  
+  body { height: 50%; margin: 40px; padding: 50px }  
+  #map_canvas { height: 100% }  
+</style>  
+<script type="text/javascript"  
+    src="http://maps.google.com/maps/api/js?sensor=false">  
+</script>  
+<script type="text/javascript">  
+ var map;
+
+function initialize() {
+  var myLatlng = new google.maps.LatLng({{lat}},{{lng}});
+  var mapOptions = {
+    zoom: 10,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+  
+  google.maps.event.addListener(map, 'click', function(event) {
+	document.getElementById("Lat").value = event.latLng.lat();
+	document.getElementById("Long").value = event.latLng.lng();
+    placeMarker(event.latLng);
+   
+  });
+}
+
+function placeMarker(location) {
+  var marker = new google.maps.Marker({
+      position: location,
+      map: map
+  });
+  map.setCenter(location);
+}
 
 
+</script>
+</head>  
 
-<form name="input" action="{{url_for('Agrega_Habitacion')}}" method="post">
+<body onload="initialize()">  
+  <div id="map_canvas" style="width:100%; height:100%"></div> 
+  <form name="input" action="{{url_for('Agrega_Habitacion')}}" method="post">
 	<font color="blue"><p> Datos Generales </font>
         
 	<p>
@@ -25,13 +63,11 @@
 	&nbsp;&nbsp;Nombre del apartamento <input type="text" name="nombre" size="20" required><br>
 	<p>
 	</p>
-	&nbsp;&nbsp;Ubicación  &nbsp;&nbsp;&nbsp; <input type="text" name="ubicacion" size="20" required><br>
-<p>
-	</p>
+	
 	&nbsp;&nbsp;Descripción <input type="text" name="descripcion" size="20" required><br>
 <p>
 	</p>
-	&nbsp;&nbsp;E-mail  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="email" name="email" size="20" required> <br> 
+	&nbsp;&nbsp;E-mail  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="email" size="20" required> <br> 
 <p>
 	</p>
 	&nbsp;&nbsp;Precio  &nbsp;&nbsp;&nbsp;&nbsp; <input type="number" name="precio1" pattern="[0-1-2-3-4-5-6-7-8-9]{1,9}" required><br>
@@ -40,13 +76,13 @@
 	&nbsp;&nbsp;Número de cuartos  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" name="cuartos"  size="1" pattern="[0-1-2-3-4-5-6-7-8-9]{1,9}"  required> <br> 
 <p>
 	</p>
-	&nbsp;&nbsp;Número de baños  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="integer" name="banos" size="1" pattern="[0-1-2-3-4-5-6-7-8-9]{1,9}"  required> <br> 
+	&nbsp;&nbsp;Número de baños  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" name="banos" size="1" pattern="[0-1-2-3-4-5-6-7-8-9]{1,9}"  required> <br> 
 <p>
 	</p>
 	&nbsp;&nbsp;Teléfono&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" name="telefono" size="1" pattern="[0-1-2-3-4-5-6-7-8-9]{1,9}"  required><br>
 <p>
 	</p>
-	&nbsp;&nbsp;Número de personas &nbsp;&nbsp;&nbsp; <input type="number" name="personas" size="1" pattern="[0-1-2-3-4-5-6-7-8-9]{1,9}"><br>
+	&nbsp;&nbsp;Número de personas &nbsp;&nbsp;&nbsp; <input type="number" name="personas" size="1" pattern="[0-1-2-3-4-5-6-7-8-9]{1,9}" required><br>
 	<p>
 	</p>
 	<font color="blue"><p> Servicios brindados</font>
@@ -64,14 +100,20 @@
       <input type="checkbox" value="limpieza"  name="limpieza"  />Limpieza<br>
       <input type="checkbox" value="lavanderia"  name="lavanderia"  />Lavandería<br>
       <input type="checkbox" value="comida"  name="comida"  />Comida<br>
-      <input type="checkbox" value="bano"  name="bano"  />Baño<br>
+      <input type="checkbox" value="bano"  name="bano"  />Baño Compartido<br>
+	<input type=HIDDEN name= "La" id="Lat" >
+	<input type=HIDDEN name= "Lo" id="Long" >
+
 
  	<p>
 	</p>
       <input type="submit" value="Aceptar">
 
 </form>
-   </div>
+  
+<a id="Coor" href="{{url_for('Guardar')}}" /></a>
+</body>  
+   
     
 
 

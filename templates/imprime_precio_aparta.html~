@@ -1,0 +1,67 @@
+{% extends "consultas.html" %}
+{% block content %}
+  
+	<div class="short-codepara-grid-head5">
+		 <span> </span>
+		 <font color="blue"><h5>Alquileres de {{precio}} hasta {{precio2}} </h5> </font>
+	
+	</div>
+    <p></p>
+<p></p>
+&nbsp;&nbsp; 
+&nbsp;&nbsp; 
+		<ul>
+			        <table>
+				<tr> <h5>
+				<td  BGCOLOR="white"><center><strong><font color="Blue">Agregar a Favoritos&nbsp;&nbsp;</font></center></strong></td>
+				<td  BGCOLOR="white"><center><strong><font color="Blue">Nombre&nbsp;&nbsp;&nbsp;&nbsp;</font></strong><center></td> 
+				<td  BGCOLOR="white"><center><strong><font color="Blue">Descripcion&nbsp;&nbsp;&nbsp;&nbsp;</font></strong></center></td>
+				<td  BGCOLOR="white"><center><strong><font color="Blue">Ubicación&nbsp;&nbsp;&nbsp;&nbsp;</font></strong></center></td>
+				<td  BGCOLOR="white"><center><strong><font color="Blue">Precio&nbsp;&nbsp;&nbsp;&nbsp;</font></strong></center></td>				
+				<td  BGCOLOR="white"><center><strong><font color="Blue">Correo&nbsp;&nbsp;&nbsp;&nbsp;</font></strong></center></td>
+				<td  BGCOLOR="white"><strong><font color="Blue">Teléfono&nbsp;&nbsp;&nbsp;&nbsp;</font></strong></td>				
+				<td  BGCOLOR="white"><strong><font color="Blue">#Personas&nbsp;&nbsp;&nbsp;&nbsp;</font></strong></td>
+                                <td  BGCOLOR="white"><strong><font color="Blue">#Cuartos&nbsp;&nbsp;&nbsp;&nbsp;</font></strong></td>
+				<td  BGCOLOR="white"><strong><font color="Blue">#Baños&nbsp;&nbsp;&nbsp;&nbsp;</font></strong></td>				
+				<td  BGCOLOR="white"><strong><font color="Blue">Amueblado&nbsp;&nbsp;</font></strong></td>
+				<td  BGCOLOR="white"><strong><font color="Blue">Cochera&nbsp;&nbsp;</font></strong></td>	
+			 	<td  BGCOLOR="white"><strong><font color="Blue">Agua&nbsp;&nbsp;</font></strong></td>
+				<td  BGCOLOR="white"><strong><font color="Blue">Luz&nbsp;&nbsp;</font></strong></td>				
+				<td  BGCOLOR="white"><strong><font color="Blue">Cable&nbsp;&nbsp;</font></strong></td>
+				<td  BGCOLOR="white"><strong><font color="Blue">Internet&nbsp;&nbsp;</font></strong></td>
+				<h5>
+				</tr>
+</div>
+				{%for n in lista %}
+				 <tr>   <td>
+					<form name="input" action="{{url_for('Favoritos')}}" method="post"> 							<input type=HIDDEN name= "var" value={{n[0]}} > 
+						<input type="submit" name= "Favoritos" value="Favoritos" >
+					</form></td>
+			
+
+					<td  BGCOLOR="white"><center><strong>{{n[1]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[2]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[3]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[4]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[5]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[6]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[7]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[8]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[9]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[10]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[11]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[12]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[13]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[14]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[15]}}</strong></center></td>
+					<td  BGCOLOR="white"><center><strong>{{n[16]}}</strong></center></td>
+										
+				 </tr>
+				
+
+				{%endfor%}	   
+					 </table>
+		  </ul>
+		
+
+{% endblock %}

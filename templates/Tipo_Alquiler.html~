@@ -14,8 +14,7 @@
 		 <center><h5>TIPO DE ALQUILER</h5> </center>
 		</div>
 		<center><p>Seleccione el tipo de alquiler que desea registrar</p> </center>
-		</div>
-    <h3><h3>
+   </div>
 
 <div class="header" id="move-top">
 				<div class="wrap">
@@ -26,8 +25,8 @@
 					<!----start-top-nav---->
 					<div class="top-nav">
 						<ul>
-							<li class="active"><a href="{{url_for('Habitacion')}}">Habitacion</a></li>
-							<li><a href="{{url_for('Apartamento')}}">Apartamento</a></li>
+							<li class="active"><a href="{{url_for('mapview')}}">Habitacion</a></li>
+							<li><a href="{{url_for('mapview')}}">Apartamento</a></li>
 														
 						</ul>
 					</div>

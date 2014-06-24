@@ -1,0 +1,42 @@
+{% extends "consultas.html" %}
+{% block content %}
+
+ <style type="text/css">
+  body {
+    color: black;
+    background-color: white}
+  </style>
+		<div class="works" id="work">
+				<div class="wrap">
+					<div class="head">
+						<span> </span>
+						<h3>Consultas de Habitaciones por Precio</h3>
+					</div>
+					
+				
+				</div><!-- container -->
+				<div class="clear"> </div>
+				
+				<div class="clear"> </div>
+				
+			</div>
+
+<form name="input" action="{{url_for('Precio_Habitacion')}}" method="post">
+   	<p>
+	</p>
+	 <div class="short-codepara-grid">
+	&nbsp;&nbsp; <center><h2><p>Ingrese los rangos de precio</p><h2></center>
+	</div>
+
+	<center>Precio  &nbsp;&nbsp;&nbsp;&nbsp; <input type="number" name="precio1" pattern="[0-1-2-3-4-5-6-7-8-9]{1,9}" required> hasta <input type="number" name="precio2" pattern="[0-1-2-3-4-5-6-7-8-9]{1,9}"required><br></center>
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+	<p>
+	</p>
+	<p>
+	</p>
+   <center><input type="submit" value="Consultar"></center>
+
+
+</form>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "consultas.html" %}
+{% block content %}
+  
+	<div class="short-codepara-grid-head5">
+		 <span> </span>
+		 <font color="blue"><h5>Lista de Favoritos </h5> </font>
+	
+	</div>
+    <p></p>
+<p></p>
+&nbsp;&nbsp; 
+&nbsp;&nbsp;
+
+<ul>
+			        <table>
+				<tr> <h5>
+				<td  BGCOLOR="white"><center><strong><font color="Blue">Agregar a Favoritos&nbsp;&nbsp;</font></center></strong></td>
+				<td  BGCOLOR="white"><center><strong><font color="Blue">Nombre Alquiler&nbsp;&nbsp;&nbsp;&nbsp;</font></strong></center></td>
+				<h5>
+				</tr>
+</div>
+				{%for n in lista %}
+				 <tr>   
+					<td  BGCOLOR="white">
+					<form name="input" action="{{url_for('Ver_Favorito')}}" method="post"> 							<input type=HIDDEN name= "var" value={{n[0]}} > 
+						<input type="submit" name= "Favoritos" value="Ver informacion" >
+					</form></td>
+					<td  BGCOLOR="white"><center><strong>{{n[0]}}</strong></center></td>
+
+				</tr>
+				
+
+				{%endfor%}	   
+					 </table>
+		  </ul>
+		
+
+{% endblock %}

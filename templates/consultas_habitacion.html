@@ -1,0 +1,43 @@
+{% extends "consultas.html" %}
+{% block content %}
+
+ <style type="text/css">
+  body {
+    color: black;
+    background-color: white}
+  </style>
+
+	<div class="short-codepara-grid-head5">
+		 <center><span> </span></center>
+		 <center><h5>Búsqueda de Habitaciones</h5> </center>
+	</div>
+		<center><h5>Indique el dato de búsqueda</h5> </center>
+<!----/otro---->
+    <div class="header" id="move-top">
+				<div class="wrap">
+				<div class="header-left">
+				
+				</div>
+				<div class="header-center">
+					<!----start-top-nav---->
+					<div class="top-nav">
+						<ul>
+							<li class="active"><a href="{{url_for('Precio_Habitacion2')}}">Precio + Facilidades</a></li>
+							<li><a href="{{url_for('Precio_Habitacion')}}">Precio</a></li>
+							<li><a href="{{url_for('Precio_Habitacion2')}}">Ubicación</a></li>
+																				
+						</ul>
+					</div>
+					<!----//End-top-nav---->
+					
+					<div class="clear"> </div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+
+
+
+    </div>
+
+
+{% endblock %}

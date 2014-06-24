@@ -1,0 +1,36 @@
+{% extends "consultas.html" %}
+{% block content %}
+
+ <style type="text/css">
+  body {
+    color: black;
+    background-color: white}
+  </style>
+		<div class="works" id="work">
+				<div class="wrap">
+					<div class="head">
+						<span> </span>
+						<h3>Consulta de Apartamento por Facilidades</h3>
+					</div>
+					
+				
+				</div><!-- container -->
+				<div class="clear"> </div>
+				
+				<div class="clear"> </div>
+				
+			</div> 
+
+<form name="input" action="{{url_for('Facilidades2_Apartamento')}}" method="post">
+   	
+      <input type="checkbox" value="agua_luz"  name="agua_luz"  />Agua + Luz<br>
+      <input type="checkbox" value="agua_cable"  name="agua_cable"  />Agua + Cable<br>
+      <input type="checkbox" value="agua_internet"  name="agua_internet"  />Agua + Internet<br>
+      <input type="checkbox" value="cable_internet"  name="cable_internet"  />Cable + Internet<br>
+   
+      <center><input type="submit" value="Consultar"></center>
+
+
+</form>
+{% endblock %}
+

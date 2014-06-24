@@ -1,0 +1,38 @@
+{% extends "consultas.html" %}
+{% block content %}
+
+ <style type="text/css">
+  body {
+    color: black;
+    background-color: white}
+  </style>
+		<div class="works" id="work">
+				<div class="wrap">
+					<div class="head">
+						<span> </span>
+						<h3>Consultas por Nombre</h3>
+					</div>
+					
+				
+				</div><!-- container -->
+				<div class="clear"> </div>
+				
+				<div class="clear"> </div>
+				
+			</div>
+
+<form name="input" action="{{url_for('Consulta_nombre')}}" method="post">
+   	
+	&nbsp;&nbsp; <center><h2><p>Nombre del apartamento</p><h2></center>
+	
+
+	<center><input type="text" name="nombre1" size="20" required><br></center>
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+	
+   <center><input type="submit" value="Consultar"></center>
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+</form>
+{% endblock %}
