@@ -78,31 +78,27 @@ class consultas_apartamento(consultas_general):
         return self.lista
 
     #metodo que consulta por dos facilidades del apartamento, probar ma;ana
-    def consultar_2_facilidades_dormitorio(self, facilidad1,facilidad2, dormitorio):
+    def consultar_2_facilidades_dormitorio(self, facilidad1,facilidad2):
         self.lista=[]
         self.fac1=self.validar.convertir_minuscula(facilidad1)
         self.fac2=self.validar.convertir_minuscula(facilidad2)
         self.dormitorios=self.validar.convertir_entero(dormitorio)
         if ( self.fac1=='agua' and  self.fac2=='luz'):
             for e in self.cursor.execute('''SELECT a.id_apartamento, a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas
-                from alquiler a inner join facilidades f on a.tipo_alquiler='apartamento' where a.id_apartamento=f.id_apartamento and luz='si' and agua='si' and
-                n_dormitorio>=? order by a.precio asc''', (self.dormitorios,)):
+                from alquiler a inner join facilidades f on a.tipo_alquiler='apartamento' where a.id_apartamento=f.id_apartamento and luz='si' and agua='si' order by a.precio asc'''):
                 self.lista.append(e)
         elif ( self.fac1=='agua' and  self.fac2=='cable'):
             for e in self.cursor.execute('''SELECT a.id_apartamento, a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas
-                from alquiler a inner join facilidades f on a.tipo_alquiler='apartamento' where a.id_apartamento=f.id_apartamento and agua='si' and cable='si' and
-                f.n_dormitorio>=? order by precio asc''', (self.dormitorios,)):
+                from alquiler a inner join facilidades f on a.tipo_alquiler='apartamento' where a.id_apartamento=f.id_apartamento and agua='si' and cable='si'  order by precio asc'''):
                 self.lista.append(e)
         
         elif ( self.fac1=='agua' and  self.fac2=='internet'):
             for e in self.cursor.execute('''SELECT a.id_apartamento, a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas
-                from alquiler a inner join facilidades f on a.tipo_alquiler='apartamento' where a.id_apartamento=f.id_apartamento and agua='si' and internet='si' and
-                n_dormitorio>=? order by precio asc''', (self.dormitorios,)):
+                from alquiler a inner join facilidades f on a.tipo_alquiler='apartamento' where a.id_apartamento=f.id_apartamento and agua='si' and internet='si' order by precio asc'''):
                 self.lista.append(e)
         elif ( self.fac1=='cable' and  self.fac2=='internet'):
             for e in self.cursor.execute('''SELECT a.id_apartamento, a.nombre, a.descripcion, a.ubicacion,a.precio,a.correo,a.telefono, a.numero_personas
-                from alquiler a inner join facilidades f on a.tipo_alquiler='apartamento' where a.id_apartamento=f.id_apartamento and cable='si' and internet='si' and
-                n_dormitorio>=? order by precio asc''', (self.dormitorios,)):
+                from alquiler a inner join facilidades f on a.tipo_alquiler='apartamento' where a.id_apartamento=f.id_apartamento and cable='si' and internet='si' order by precio asc'''):
                 self.lista.append(e)        
         return self.lista
 
