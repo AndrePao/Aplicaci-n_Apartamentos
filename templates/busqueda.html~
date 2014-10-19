@@ -69,7 +69,7 @@
 					<!----start-top-nav---->
 					<div class="top-nav">
 						<ul>
-							<li class="active"><a href="{{url_for('Consulta_Habitacion')}}">Habitación</a></li>
+							<li class="active"><a href="{{url_for('Consulta_Habitacion')}}">Habitacion</a></li>
 							<li><a href="{{url_for('Consulta_Apartamento')}}">Apartamento</a></li>
 										
 						</ul>

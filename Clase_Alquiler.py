@@ -66,13 +66,4 @@ class Facilidades (Alquiler):
         Base.commit_conexion()  
 
  
-def numero_filas():
-	Base=Clase_Base_datos.Base_datos_conexion()
-	cursor=Base.cursor_conexion()
-        c=1
-        for e in cursor.execute('''SELECT id_apartamento from alquiler'''):
-            c+=1
-	print c
-        return c
-numero_filas()
 
